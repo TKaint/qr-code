@@ -1,13 +1,12 @@
 {
   "type": "service_account",
-  "project_id": "python-scanner",
-  "private_key_id": "848eecfd387ea5b63f2a0500fb8cdf36ae1705a1",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDpGMst15M/OuCa\nU4ufvdmx4wpBORdb0hmGu9PDrhtu89ThiwHiak6H5rCPGPc3vRwhh9fJgG8VEe7p\naJp7mYQK6PSuwQJb3UsY4W5pfB8cuipg/SLVOVJWjKpLRzxM/lcdnU5O3Y3z7QjN\nmQCswZiDFTc3UcAiBjOsCoW9MBMXR8mNjcu35MvbEOBP0lJoVCE9TYQnt6NXiBp0\nuauakpGKKGmGAgzOZAdL8329EPPsEGqNI5KMrCvczzWd0zug/ePu/Hw9DoRG3QyS\nicQBQCI0CWdKbIAcUi213zksa2EtBKVFdi6ZDmhbj8dmiU+yp0vXB57897YU9B+p\nOvch+KQBAgMBAAECgf8ORQJLMCNHf6c4S10Ezm6BQVDjZUdUy6vcX6s7E3GCfVLO\n69+VqMRd9XVhjTm1I9KRCuve3gnu1EY367tpTaCTumcgO5iVXxq1zzcfJgYRkCQA\nA/8Z5oRv3/Sc3yOF4xwaKAMfONjz0dL0IyWzbbaUb7wNmueULaUEJzDAwCyrBBAb\nnKgRGe8TBAilNEVske6sQS3FQ675BaKyyh6CJroTN9u2HNf/lqkirPqhhK+xl016\nkGlGjit5vdXRCQM+UyDhshmgfW3OwkBkNt0mVFjmttkg3T1VfTL0e7IjfyJ+7Ht8\nCPGX7EywH1rsqvuWMB8ZSpZOHijxajZn5lDdyUECgYEA+nMPMqwawjwxXCrXFqpj\nNWM9r8gy0lxxgXJOkaWrpl5+a8traf1kQO5rkJHcMQZN6ota/a23YUILA34uhzWE\nEia9st4oEk1q3u2uiW9//kVlxYpSYoN43sYCAVwBQmDp3eRSz4Xg5zpa6hSYIZaq\nC+BqPBPmold1XKAyQ57D/8ECgYEA7kNIgjfRLEWZF9ibm6gIMigsSV6pC2JrWnMu\nBH/tB6H4KT+Hsp0EUqiwrjjG7uhgS09BD/W1G8ZT68BCrVDHt3DDzpC7KfyBSpVV\np3ptv69baRtTJdh+7VSDNVA0pjICH2b7Mhkuvdk6SQcJaT+9nUn4BTHHX9PBIluv\nEKqhtEECgYEA8HLW/IdPiXvQx/Q5XIFpjjAhYUqLwHsQXn8n/51XFvtR1JwQHEoy\nnkRI8RuYk1jCJZR1X2gQz0dg25Ghih5PFj4rkjbHsgqxuCXpk/mAoNZvxx/tyLcA\nrKDd/AAhFWGGJoq3FpYqPtU/w8zR4i2MRKrIU7Wnj+T3wF3s5A7hjgECgYEAusL8\n1C3ChYxsi3ebyfB1tDMvO7e6lBTqh3TfbmGEP8ZjSpnk2Uog+FYIYBhbPyvhR0bx\nffwgoYvdfl8vJMG8OvtmUMW8IBYwlnDmOihKXMWsxn/HtlO0cn4bdy/OhTOP3GOR\npVx9+gyLlnCwnNJ85Az2H8Q8Ps4yhqcNW+gUZsECgYEAs6I3e4N9VFMTjGOvszIV\nxQiNmvuY3D8qKc3Qdw53Y8L+NzMlBsZLrEsqqcnFJr9Id3bIEvWgTvJ13od/Uc7Q\nlXwhOJGRyWIYambsgwGjL5aI0CzmmUI6TbjXQM2X/+THnCppv8d3c+8+V/p5xCsq\nztinQnF2PiNILRlL1mow0h8=\n-----END PRIVATE KEY-----\n",
-  "client_email": "python-api@python-scanner.iam.gserviceaccount.com",
-  "client_id": "118046523321694966565",
+  "project_id": "your_project_id",
+  "private_key_id": "your_private_key_id",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n",
+  "client_email": "your_service_account_email@your_project_id.iam.gserviceaccount.com",
+  "client_id": "your_client_id",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/python-api%40python-scanner.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/your_service_account_email@your_project_id.iam.gserviceaccount.com"
 }
