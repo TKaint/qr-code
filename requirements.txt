@@ -1,0 +1,5 @@
+opencv-python-headless
+pyzbar
+gspread
+oauth2client
+streamlit
