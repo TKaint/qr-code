@@ -1,3 +1,8 @@
+import os
+
+
+
+
 import cv2
 import gspread
 from google.oauth2.service_account import Credentials
@@ -7,10 +12,15 @@ import json
 import streamlit as st
 import numpy as np
 
+# Access credentials from Streamlit secrets
+creds_dict = st.secrets["google_service_account"]
+creds = Credentials.from_service_account_info(creds_dict)
+client = gspread.authorize(creds)
+
 # Google Sheets setup
-scope = ["https://www.googleapis.com/auth/spreadsheets"]
-creds = Credentials.from_service_account_file("qr.json")
-client = gspread.authorize(creds.with_scopes(scope))
+#scope = ["https://www.googleapis.com/auth/spreadsheets"]
+#creds = Credentials.from_service_account_file("qr.json")
+#client = gspread.authorize(creds.with_scopes(scope))
 
 # Open your Google Sheet
 sheet_id = "1GSOkG9dGjH76OdMTDJsym8QvVTDuOaXJhhhWHf-yI6c"
