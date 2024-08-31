@@ -1,5 +1,4 @@
 import cv2
-from pyzbar.pyzbar import decode
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
@@ -37,40 +36,38 @@ while True:
 
     # Convert the frame to RGB format for display in Streamlit
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    qr_codes = decode(frame)
+    qr_code_detector = cv2.QRCodeDetector()
+    decoded_text, points, _ = qr_code_detector.detectAndDecode(frame)
 
-    if qr_codes:
-        for barcode in qr_codes:
-            qr_data = barcode.data.decode('utf-8')
+    if decoded_text:
+        # Check if the data is different from the last scanned data
+        if decoded_text != last_scanned_data:
+            now = datetime.now()
+            date = now.strftime('%Y-%m-%d')
+            time_str = now.strftime('%H:%M:%S')
 
-            # Check if the data is different from the last scanned data
-            if qr_data != last_scanned_data:
-                now = datetime.now()
-                date = now.strftime('%Y-%m-%d')
-                time_str = now.strftime('%H:%M:%S')
+            try:
+                # Parse the JSON data
+                qr_data_dict = json.loads(decoded_text)
 
-                try:
-                    # Parse the JSON data
-                    qr_data_dict = json.loads(qr_data)
+                # Extract the values from the dictionary
+                name = qr_data_dict.get("name", "")
+                roll = qr_data_dict.get("roll", "")
+                position = qr_data_dict.get("position", "")
 
-                    # Extract the values from the dictionary
-                    name = qr_data_dict.get("name", "")
-                    roll = qr_data_dict.get("roll", "")
-                    position = qr_data_dict.get("position", "")
+                # Append data to Google Sheet
+                worksheet.append_row([date, time_str, name, roll, position])
 
-                    # Append data to Google Sheet
-                    worksheet.append_row([date, time_str, name, roll, position])
+                # Update last scanned data
+                last_scanned_data = decoded_text
 
-                    # Update last scanned data
-                    last_scanned_data = qr_data
+                st.success(f"Scanned QR Code: {decoded_text} on {date} at {time_str}")
 
-                    st.success(f"Scanned QR Code: {qr_data} on {date} at {time_str}")
+                # Introduce a delay after a successful scan
+                time.sleep(scan_delay)
 
-                    # Introduce a delay after a successful scan
-                    time.sleep(scan_delay)
-
-                except json.JSONDecodeError:
-                    st.error("Failed to decode QR data as JSON. Skipping.")
+            except json.JSONDecodeError:
+                st.error("Failed to decode QR data as JSON. Skipping.")
 
     # Display the frame in Streamlit
     st.image(frame_rgb)
